@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Demo - Voice Agent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 30%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 30%);
+            animation: waveMove 15s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 60% 70%, rgba(118, 75, 162, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 10%, rgba(102, 126, 234, 0.08) 0%, transparent 35%);
+            animation: waveMove 20s ease-in-out infinite reverse;
+            z-index: -1;
+        }
+
+        @keyframes waveMove {
+            0%, 100% {
+                transform: translateX(-25%) translateY(-25%) rotate(0deg);
+            }
+            25% {
+                transform: translateX(-30%) translateY(-20%) rotate(1deg);
+            }
+            50% {
+                transform: translateX(-20%) translateY(-30%) rotate(-1deg);
+            }
+            75% {
+                transform: translateX(-35%) translateY(-25%) rotate(0.5deg);
+            }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+        }
+
+        .widget-container {
+            padding: 20px;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 15px;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .branding {
+            margin-top: auto;
+        }
+
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #333;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+                margin: 10px;
+                height: 450px;
+            }
+            
+            .branding .logo {
+                font-size: 2.5rem;
+            }
+            
+            .branding h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="widget-container">
+            <elevenlabs-convai agent-id="agent_01jyma4yg4eyxbhq3ssxmjxkt2"></elevenlabs-convai>
+        </div>
+        
+        <div class="branding">
+            <div class="logo">🎤</div>
+            <h1>Core Demo</h1>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+</body>
+</html>
