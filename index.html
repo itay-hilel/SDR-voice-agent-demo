@@ -15,12 +15,6 @@
             font-family: 'Inter', 'Segoe UI', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            padding-top: 35px;
             overflow: hidden;
             position: relative;
         }
@@ -73,14 +67,18 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 40px;
+            padding: 60px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             text-align: center;
-            max-width: 500px;
-            width: 100%;
+            max-width: 800px;
+            width: 90%;
+            height: 750px;
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             flex-direction: column;
-            height: 500px;
         }
 
         .widget-container {
@@ -99,12 +97,12 @@
             margin-top: auto;
         }
 
-        .logo {
+        .branding .logo {
             font-size: 3rem;
             margin-bottom: 10px;
         }
 
-        h1 {
+        .branding h1 {
             font-size: 2rem;
             color: #333;
             font-weight: 600;
@@ -114,8 +112,9 @@
         @media (max-width: 768px) {
             .container {
                 padding: 25px;
-                margin: 10px;
-                height: 450px;
+                height: 600px;
+                width: 95%;
+                top: 55%;
             }
             
             .branding .logo {
